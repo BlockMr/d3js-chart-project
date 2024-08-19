@@ -19,16 +19,21 @@ export default function App() {
     };
     data.charts[0].points.push(point_btc);
     data.charts[1].points.push(point_eth);
-    console.log(data);
   }
 
   function updateData() {
     setInterval(() => {
       addPointsToData();
+      set_all_data(data);
+      console.log(all_data)
     }, 1000);
   }
 
   updateData();
 
-  return <Container className="App"></Container>;
+  return (
+    <Container className="App">
+      <LinePlot data={all_data} />
+    </Container>
+  );
 }
