@@ -24,7 +24,7 @@ export default function App() {
 
   function updateData() {
     setInterval(() => {
-      addPointsToData;
+      addPointsToData();
     }, 1000);
   }
 
